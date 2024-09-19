@@ -5,22 +5,17 @@ export default function App() {
   const [size, setSize] = useState(100);
   const [imageSrc, setImageSrc] = useState('Nong-Moo-Deng.jpeg');
   const [isFull, setIsFull] = useState(false);
-  const [effectText, setEffectText] = useState(''); // state สำหรับเก็บข้อความเอฟเฟกต์
-  const [effectPosition, setEffectPosition] = useState({ x: 0, y: 0 }); // ตำแหน่งของเอฟเฟกต์
+  const [effectText, setEffectText] = useState('');
+  const [effectPosition, setEffectPosition] = useState({ x: 0, y: 0 });
 
-  // ฟังก์ชันที่ใช้เพิ่มขนาดของหมูเด้งเมื่อคลิกที่ภาพอาหาร
   const feedMooDang = (increment, event) => {
     if (isFull) return;
 
     const newSize = size + increment;
     setSize(newSize);
-
-    // แสดงเอฟเฟกต์ "+5", "+10", "+15" ตามค่า increment
     setEffectText(`+${increment}`);
-    // ตำแหน่งที่จะแสดงข้อความเอฟเฟกต์ (ตามตำแหน่งคลิก)
     setEffectPosition({ x: event.clientX, y: event.clientY });
 
-    // ลบข้อความเอฟเฟกต์หลังจาก 1 วินาที
     setTimeout(() => {
       setEffectText('');
     }, 1000);
@@ -52,22 +47,22 @@ export default function App() {
       {/* อาหารต่าง ๆ */}
       <div className="food-container">
         <img 
-          src="./public/Picture/melon.jpeg" 
+          src="/Picture/melon.jpeg" 
           alt="แตงโม" 
           className="smallimg" 
-          onClick={(e) => feedMooDang(5, e)} // แตงโมเพิ่มขนาด 5 และส่งตำแหน่งคลิก
+          onClick={(e) => feedMooDang(5, e)} 
         />
         <img 
-          src="./public/Picture/pumpkin.jpeg" 
+          src="/Picture/pumpkin.jpeg" 
           alt="ฟักทอง" 
           className="smallimg" 
-          onClick={(e) => feedMooDang(10, e)} // ฟักทองเพิ่มขนาด 10
+          onClick={(e) => feedMooDang(10, e)} 
         />
         <img 
-          src="./public/Picture/banana.jpeg" 
+          src="/Picture/banana.jpeg" 
           alt="กล้วย" 
           className="smallimg" 
-          onClick={(e) => feedMooDang(15, e)} // กล้วยเพิ่มขนาด 15
+          onClick={(e) => feedMooDang(15, e)} 
         />
       </div>
 
