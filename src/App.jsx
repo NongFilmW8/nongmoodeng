@@ -43,7 +43,7 @@ export default function App() {
 
       {/* หมูเด้ง */}
       <img 
-        src={`./src/Picture/${imageSrc}`}  
+        src={`/Picture/${imageSrc}`} 
         className={`moodang-image ${isFull ? 'full' : ''}`}
         style={{ width: `${size}px`, height: `${size}px` }} 
         alt="หมูเด้ง"
@@ -52,19 +52,19 @@ export default function App() {
       {/* อาหารต่าง ๆ */}
       <div className="food-container">
         <img 
-          src="./src/Picture/melon.jpeg" 
+          src="./public/Picture/melon.jpeg" 
           alt="แตงโม" 
           className="smallimg" 
           onClick={(e) => feedMooDang(5, e)} // แตงโมเพิ่มขนาด 5 และส่งตำแหน่งคลิก
         />
         <img 
-          src="./src/Picture/pumpkin.jpeg" 
+          src="./public/Picture/pumpkin.jpeg" 
           alt="ฟักทอง" 
           className="smallimg" 
           onClick={(e) => feedMooDang(10, e)} // ฟักทองเพิ่มขนาด 10
         />
         <img 
-          src="./src/Picture/banana.jpeg" 
+          src="./public/Picture/banana.jpeg" 
           alt="กล้วย" 
           className="smallimg" 
           onClick={(e) => feedMooDang(15, e)} // กล้วยเพิ่มขนาด 15
